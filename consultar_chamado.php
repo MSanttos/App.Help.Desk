@@ -1,4 +1,19 @@
 <?php require_once "valida_acesso.php" ?>
+<?php
+
+  //chamados
+  $chamados = [];
+
+  $arquivo = fopen('arquivo.txt','r'); 
+  //varendo linhas e retornando
+  while (!feof($arquivo)){//testa fim do arquivo
+    $registro = fgets($arquivo);//linhas
+    $chamados[] = $registro;
+  }
+
+  fclose($arquivo);
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -36,20 +51,22 @@
           Consulta de chamado
         </div>
         <div class="card-body">
+
+        <?php foreach ($chamados as $chamado) {
+          $chamado_dados = explode(' ', $chamado); 
+            if (count($chamado_dados) < 3) {
+              continue; 
+          } ?>
           <div class="card mb-3 bg-light">
             <div class="card-body">
-              <h5 class="card-title">Título do chamado...</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Categoria</h6>
-              <p class="card-text">Descrição do chamado...</p>
+              <h5 class="card-title"><?=$chamado_dados[0]?></h5>
+              <h6 class="card-subtitle mb-2 text-muted"><?=$chamado_dados[1]?></h6>
+              <p class="card-text"><?=$chamado_dados[2]?></p>
             </div>
           </div>
-          <div class="card mb-3 bg-light">
-            <div class="card-body">
-              <h5 class="card-title">Título do chamado...</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Categoria</h6>
-              <p class="card-text">Descrição do chamado...</p>
-            </div>
-          </div>
+
+        <?php } ?>
+
           <div class="row mt-5">
             <div class="col-6">
             <a class="btn btn-lg btn-warning btn-block" href="home.php">Voltar</a>
