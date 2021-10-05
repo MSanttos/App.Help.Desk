@@ -7,6 +7,10 @@
 <meta name="Description" content="App para chamado de serviços"/>
 <meta name="author" content="Michel Santos"/>
 <meta name="developer" content="https://www.linkedin.com/in/michel-santos-965002158/"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link rel="stylesheet" href="assets/css/style.css">
@@ -43,7 +47,7 @@
               </div>
             <?php }?>
 
-            <?php if(isset($_GET['login']) && $_GET['login'] == 'erro2'){ ?>
+            <?php if(isset($_GET['login']) && $_GET['login'] == 'erro:403'){ ?>
               <div class="mb-3" style="text-align: center; background: red; color: white; padding: 10px;">
                 Para acessar estas páginas, é necessário realizar o login novamente.
               </div>
