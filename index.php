@@ -36,6 +36,15 @@
             <div class="form-group">
               <input type="password" name="senha" class="form-control" placeholder="Senha">
             </div>
+
+            <?php if(isset($_GET['login']) && $_GET['login'] == 'erro'){ ?>
+
+              <div class="mb-3" style="text-align: center; background: red; color: white; padding: 10px;">
+                Usuário ou senha estão incorretos.
+              </div>
+
+            <?php }?>
+                
             <button class="btn btn-lg btn-info btn-block" type="submit">Entrar</button>
           </form>
         </div>

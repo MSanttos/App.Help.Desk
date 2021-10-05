@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="assets/css/style.css">
+
 <?php
   //variavel verificar la
   $usuario_autenticado = false;
@@ -15,19 +17,13 @@
   
   foreach($usuarios_app as $user) {
 
-    echo 'Usuário app: ' . $user['email'] . '/' . $user['senha'];
-    echo '<br/>';
-    echo 'Usuário form: ' . $_POST['email'] . '/' . $_POST['senha'];
-
     if($user['email'] == $_POST['email'] && $user['senha'] == $_POST['senha']){
       $usuario_autenticado = true;
     }
+  }   
     if($usuario_autenticado){
       echo '<h4>Usuário autenticado.</h4>';
     } else {
-      echo '<h4>Não foi possível identificar o usuário.</h4>';
-    }
-
-    echo '<hr/>';
-  }
+      header('location: index.php?login=erro');
+    } 
 ?>
