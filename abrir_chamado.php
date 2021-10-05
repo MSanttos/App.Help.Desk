@@ -1,3 +1,5 @@
+<?php require_once "valida_acesso.php" ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,11 +59,11 @@
 
                 <div class="row mt-5">
                   <div class="col-6">
-                    <button class="btn btn-lg btn-warning btn-block" type="submit">Voltar</button>
+                    <a class="btn btn-lg btn-warning btn-block" href="home.php">Voltar</a>
                   </div>
 
                   <div class="col-6">
-                    <button class="btn btn-lg btn-info btn-block" type="submit">Abrir</button>
+                    <a class="btn btn-lg btn-info btn-block" href="consultar_chamado.php">Abrir</a>
                   </div>
                 </div>
               </form>

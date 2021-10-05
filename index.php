@@ -26,7 +26,7 @@
     <div class="card-login">
       <div class="card">
         <div class="card-header">
-          Login
+          <i>Login</i>
         </div>
         <div class="card-body">
           <form action="valida_login.php" method="POST">
@@ -38,11 +38,15 @@
             </div>
 
             <?php if(isset($_GET['login']) && $_GET['login'] == 'erro'){ ?>
-
               <div class="mb-3" style="text-align: center; background: red; color: white; padding: 10px;">
                 Usuário ou senha estão incorretos.
               </div>
+            <?php }?>
 
+            <?php if(isset($_GET['login']) && $_GET['login'] == 'erro2'){ ?>
+              <div class="mb-3" style="text-align: center; background: red; color: white; padding: 10px;">
+                Para acessar estas páginas, é necessário realizar o login novamente.
+              </div>
             <?php }?>
                 
             <button class="btn btn-lg btn-info btn-block" type="submit">Entrar</button>
