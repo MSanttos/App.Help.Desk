@@ -1,5 +1,5 @@
 <?php
-  $texto = $_POST['titulo'] . ' ' . $_POST['categoria'] . ' ' . $_POST['descricao'] . PHP_EOL;
+  $texto = $_POST['titulo'] . ' ' . $_POST['data']. ' ' . $_POST['categoria'] . ' ' . $_POST['descricao'] . PHP_EOL;
   //abrindo arquivo
   $arquivo = fopen('arquivo.txt','a');
   //escrevendo o arquivo

@@ -41,9 +41,16 @@
             <div class="col">
               
               <form method="post" action="registra_chamado.php">
-                <div class="form-group">
-                  <label>Título</label>
-                  <input type="text" class="form-control" placeholder="Título" name="titulo">
+                <div class="row">
+                  <div class="form-group col-md-6">
+                    <label>Título</label>
+                    <input type="text" class="form-control" placeholder="Título" name="titulo">
+                  </div>
+
+                  <div class="form-group col-md-6">
+                    <label>Data de abertura</label>
+                    <input type="date" class="form-control"name="data">
+                  </div>
                 </div>
                 
                 <div class="form-group">
