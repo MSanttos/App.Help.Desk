@@ -1,10 +1,11 @@
 <?php require_once "valida_acesso.php" ?>
 <?php
-
+  //print_r($_SESSION);
   //chamados
-  $chamados = [];
+  $chamados = array();
 
-  $arquivo = fopen('arquivo.txt','r'); 
+  //$arquivo = fopen('../../../app.help.desk/arquivo.txt','r');
+  $arquivo = fopen('privado/arquivo.txt','r'); 
   //varendo linhas e retornando
   while (!feof($arquivo)){//testa fim do arquivo
     $registro = fgets($arquivo);//linhas
@@ -53,16 +54,28 @@
         <div class="card-body">
 
         <?php foreach ($chamados as $chamado) {
-          $chamado_dados = explode(' ', $chamado); 
-            if (count($chamado_dados) < 4) {
-              continue; 
-          } ?>
+          
+          $chamado_dados = explode('#', $chamado);
+
+          if($_SESSION['perfil_id'] == 2){
+            //só exibi se foi criado pelo usuário
+            if($_SESSION['id'] != $chamado_dados[0]) {
+              continue;
+            }
+          }  
+
+          if(count($chamado_dados) < 4) {
+            continue;
+          } 
+          
+          ?>
+
           <div class="card mb-3 bg-light">
             <div class="card-body">
-              <h5 class="card-title">Título: <?=$chamado_dados[0]?></h5>
-              <p class="card-title text-muted">Data abertura: <?=$chamado_dados[1]?></p>
-              <p class="card-subtitle mb-2 text-muted">Categoria: <?=$chamado_dados[2]?></p>
-              <p class="card-text text-muted">Descrição: <?=$chamado_dados[3]?></p>
+              <h5 class="card-title">Título: <?=$chamado_dados[1]?></h5>
+              <p class="card-title text-muted">Data abertura: <?=$chamado_dados[2]?></p>
+              <p class="card-subtitle mb-2 text-muted">Categoria: <?=$chamado_dados[3]?></p>
+              <p class="card-text text-muted">Descrição: <?=$chamado_dados[4]?></p>
             </div>
           </div>
 

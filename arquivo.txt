@@ -1,8 +1,0 @@
-teste Impressora teste
-teste2 Impressora teste2
-teste3 Impressora teste3
-teste4 Impressora teste4
-teste5 2021-10-05 Impressora teste5
-teste6  Impressora teste6
-teste7  Impressora teste7
-teste8 2021-10-05 Impressora teste8

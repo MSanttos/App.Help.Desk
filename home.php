@@ -1,4 +1,4 @@
-<?php require_once "valida_acesso.php" ?>
+<?php require_once "valida_acesso.php"/*print_r($_SESSION);*/ ?>
 
 <!DOCTYPE html>
 <html lang="en">
